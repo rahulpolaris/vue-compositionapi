@@ -5,7 +5,8 @@
       Few composition api features like <b>Provide/inject computed and lifecycle hooks </b>are already in app super component
     </p>
     <HelloWorld />
-    <button
+    <div class="nav1">
+      <button
       :class="renderModule === 'ref' ? 'btn activee' : 'btn'"
       @click="renderModule = 'ref'"
     >
@@ -22,15 +23,31 @@
       @click="renderModule = 'toRefs'"
     > toRefs
     </button>
-    <button
+    </div>
+    <div class="nav2"> <button
       :class="renderModule === 'Watchers' ? 'btn activee' : 'btn'"
       @click="renderModule = 'Watchers'"
     > Watchers
     </button>
+    <button
+      :class="renderModule === 'propsAndEvents' ? 'btn activee' : 'btn'"
+      @click="renderModule = 'propsAndEvents'"
+    > propsAndEvents
+    </button>
+    <button
+      :class="renderModule === 'codeReusability' ? 'btn activee' : 'btn'"
+      @click="renderModule = 'codeReusability'"
+    > codeReusability
+    </button>
+    </div>
+    
+   
     <CompositionAPIref v-if="renderModule === 'ref'" />
     <CompositionAPI02 v-if="renderModule === 'reactive'" />
     <CompositionAPI03 v-if="renderModule === 'toRefs'"/>
     <CompositionAPI04 v-if="renderModule === 'Watchers'"/>
+    <CompositionAPI05 v-if="renderModule === 'propsAndEvents'"/>
+    <CompositionAPI06 v-if="renderModule === 'codeReusability'"/>
   </div>
 </template>
 
@@ -40,6 +57,8 @@ import CompositionAPIref from "./components/compposition-api.vue";
 import CompositionAPI02 from "./components/composition-api02.vue";
 import CompositionAPI03 from "./components/composition-api03.vue";
 import CompositionAPI04 from "./components/composition-api04.vue";
+import CompositionAPI05 from "./components/composition-api05.vue";
+import CompositionAPI06 from "./components/composition-api06.vue";
 import {ref,provide,computed, onMounted} from 'vue'
 
 export default {
@@ -64,7 +83,9 @@ return {
     CompositionAPIref,
     CompositionAPI02,
     CompositionAPI03,
-    CompositionAPI04
+    CompositionAPI04,
+    CompositionAPI05,
+    CompositionAPI06
   },
   data() {
     return {
@@ -99,6 +120,22 @@ return {
   border: red 2px solid;
   font-weight: 550;
 }
+.btn-lowtier {
+  padding: 0.3em 1.5em;
+  font-size: 1rem;
+  border: hsl(212, 100%, 50%) 1px solid;
+  font-weight: 550;
+  border-radius: 18px;
+  background-color:lawngreen;
+  transition: all 0.15s ease;
+}
+.btn-lowtier:hover{
+  background-color:rgb(255, 210, 7)
+}
+.btn-lowtier:active{
+  background-color:rgb(106, 202, 9)
+}
+
 .activee {
   border: green 5px solid;
 }

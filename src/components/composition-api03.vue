@@ -8,7 +8,7 @@
     <h4>hello {{ fname }} {{ lname }} </h4>
     <h4>hello {{ man2.fname1 }} {{ man2.lname1 }} :</h4>
     <CompositionAPI031/>
-   <article class='note'><b  v-if="iftimeOut">name doesn change in first because we passed individual properties.. <br> changes in second because vue knows that it has to react to changes in state object <br> chnges in third one becuse we solved the problem of first one and second one using toRefs. it preserves the reactivity of individual properties</b></article> 
+   <article class='note'><b  v-if="iftimeOut">name doesn change in first because we passed constants on which individual properties were mapped individual properties .. <br> changes in second because vue knows that it has to react to changes in state object but we have to acces data through object.data syntax <br> chnges in third one becuse we solved the problem of first one and second one using toRefs. it preserves the reactivity of individual properties</b></article> 
 
   </div>
 </template>
